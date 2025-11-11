@@ -89,6 +89,7 @@ const poolsFunction = async () => {
     basePools,
     hyperliquidPools,
     plasmaPools,
+    xlayerPools,
   ] = await Promise.all([
     getV3Pools('MAINNET', 'ethereum'),
     getV3Pools('GNOSIS', 'xdai'),
@@ -98,6 +99,7 @@ const poolsFunction = async () => {
     getV3Pools('BASE', 'base'),
     getV3Pools('HYPEREVM', 'hyperliquid'),
     getV3Pools('PLASMA', 'plasma'),
+    getV3Pools('XLAYER', 'xlayer')
   ]);
 
   return [
@@ -109,6 +111,7 @@ const poolsFunction = async () => {
     ...basePools,
     ...hyperliquidPools,
     ...plasmaPools,
+    ...xlayerPools,
   ];
 };
 
